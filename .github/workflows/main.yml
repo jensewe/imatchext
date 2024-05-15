@@ -119,7 +119,7 @@ jobs:
       - name: Getting hl2sdk-l4d2
         uses: actions/checkout@v3
         with:
-          repository: jensewe/hl2sdk
+          repository: alliedmodders/hl2sdk
           ref: l4d2
           path: hl2sdk-l4d2
           
