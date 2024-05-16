@@ -45,7 +45,7 @@ HKeySymbol GetCurrentMission()
 	if (pkvServerGameDetails != NULL) {
 		const char* pszMission = pkvServerGameDetails->GetString("game/campaign");
 		if (*pszMission != '\0') {
-			return GetKeyValuesSystem()->GetSymbolForString(pszMission, false);
+			return KeyValuesSystem()->GetSymbolForString(pszMission, false);
 		}
 	}
 
@@ -59,7 +59,7 @@ HKeySymbol GetCurrentMode()
 		pszMode = "coop";
 	}
 
-	return GetKeyValuesSystem()->GetSymbolForString(pszMode, false);
+	return KeyValuesSystem()->GetSymbolForString(pszMode, false);
 }
 
 inline int Param_GetKeyValues(IPluginContext* pContext, cell_t param, KeyValues** ppkvData, bool bOptional)
@@ -171,7 +171,7 @@ inline int Param_GetModeStringPtr(IPluginContext* pContext, cell_t addr, const c
 
 	// Validate input - disallow subkeys
 	KeyValues* pkvMode = NULL;
-	error = Param_GetKeyValuesMode(pContext, GetKeyValuesSystem()->GetSymbolForString(pszName, false), &pkvMode);
+	error = Param_GetKeyValuesMode(pContext, KeyValuesSystem()->GetSymbolForString(pszName, false), &pkvMode);
 	if (error != SP_ERROR_NONE) {
 		return error;
 	}
@@ -1010,7 +1010,7 @@ static cell_t GetMissionSymbol(IPluginContext* pContext, const cell_t* params)
 		return INVALID_KEY_SYMBOL;
 	}
 
-	KeyValues* pkvMission = pkvMissions->FindKey(GetKeyValuesSystem()->GetSymbolForString(pszName, false));
+	KeyValues* pkvMission = pkvMissions->FindKey(KeyValuesSystem()->GetSymbolForString(pszName, false));
 	if (pkvMission != NULL) {
 		return pkvMission->GetNameSymbol();
 	}
