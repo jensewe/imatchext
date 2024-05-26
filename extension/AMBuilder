@@ -10,11 +10,11 @@ project.sources += [
   'phrasesgen.cpp',
   os.path.join(Extension.sm_root, 'public', 'smsdk_ext.cpp'),
   os.path.join(Extension.sm_root, 'public', 'CDetour', 'detours.cpp'),
-  os.path.join(Extension.sm_root, 'extensions', 'dhooks', 'asm', 'asm.c'),
+  os.path.join(Extension.sm_root, 'public', 'asm', 'asm.c'),
 ]
 
 # sm1.10+
-libudis_folder = os.path.join(Extension.sm_root, 'extensions', 'dhooks', 'libudis86')
+libudis_folder = os.path.join(Extension.sm_root, 'public', 'libudis86')
 if os.path.isdir(libudis_folder):
   project.sources += [
     os.path.join(libudis_folder, 'decode.c'),
