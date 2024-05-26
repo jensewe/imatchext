@@ -41,7 +41,7 @@ jobs:
           - sm_version: latest
             sm_branch: master
             meta_version: latest
-            meta_branch: master
+            meta_branch: 1.12-dev
             
           - sm_version: "1.9"
             sm_branch: "1.9-dev"
